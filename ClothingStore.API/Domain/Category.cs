@@ -23,7 +23,7 @@ namespace ClothingStore.API.Domain
         [MaxLength(80)]
         public string Name { get; set; }
         
-        [MaxLength(80)]
+        [MaxLength(300)]
         public string UrlImage { get; set; }
         
         public ICollection<Product> Products { get; set; }

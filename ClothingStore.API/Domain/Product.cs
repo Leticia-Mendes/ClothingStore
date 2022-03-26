@@ -16,15 +16,22 @@ namespace ClothingStore.API.Domain
         [Required]
         [StringLength(80)]
         public string Name { get; set; }
-        
-        [Required]
-        [StringLength(300)]
-        public string Description { get; set; }
 
         [Required]
         public double Price { get; set; }
-        
+
+        [Required]
+        [MaxLength(50)]
+        public string Size { get; set; }
+
+        [Required]
+        [MaxLength(50)]
+        public string Color { get; set; }
+
         [StringLength(300)]
+        public string Description { get; set; }
+
+        [StringLength(400)]
         public string UrlImage { get; set; }
         public string Stock { get; set; }
         public DateTime RegisterDate  { get; set; }

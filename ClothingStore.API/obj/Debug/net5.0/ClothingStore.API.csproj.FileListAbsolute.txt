@@ -21,8 +21,16 @@ D:\codigo-c#\ClothingStore.API\ClothingStore.API\obj\Debug\net5.0\ClothingStore.
 D:\codigo-c#\ClothingStore.API\ClothingStore.API\obj\Debug\net5.0\scopedcss\bundle\ClothingStore.API.styles.css
 D:\codigo-c#\ClothingStore.API\ClothingStore.API\obj\Debug\net5.0\staticwebassets\ClothingStore.API.StaticWebAssets.Manifest.cache
 D:\codigo-c#\ClothingStore.API\ClothingStore.API\obj\Debug\net5.0\ClothingStore.API.RazorTargetAssemblyInfo.cache
-D:\codigo-c#\ClothingStore.API\ClothingStore.API\obj\Debug\net5.0\ClothingStore.API.csproj.CopyComplete
 D:\codigo-c#\ClothingStore.API\ClothingStore.API\obj\Debug\net5.0\ClothingStore.API.dll
 D:\codigo-c#\ClothingStore.API\ClothingStore.API\obj\Debug\net5.0\ref\ClothingStore.API.dll
 D:\codigo-c#\ClothingStore.API\ClothingStore.API\obj\Debug\net5.0\ClothingStore.API.pdb
 D:\codigo-c#\ClothingStore.API\ClothingStore.API\obj\Debug\net5.0\ClothingStore.API.genruntimeconfig.cache
+D:\codigo-c#\ClothingStore.API\ClothingStore.API\bin\Debug\net5.0\Humanizer.dll
+D:\codigo-c#\ClothingStore.API\ClothingStore.API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+D:\codigo-c#\ClothingStore.API\ClothingStore.API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\codigo-c#\ClothingStore.API\ClothingStore.API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\codigo-c#\ClothingStore.API\ClothingStore.API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\codigo-c#\ClothingStore.API\ClothingStore.API\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+D:\codigo-c#\ClothingStore.API\ClothingStore.API\bin\Debug\net5.0\MySqlConnector.dll
+D:\codigo-c#\ClothingStore.API\ClothingStore.API\bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll
+D:\codigo-c#\ClothingStore.API\ClothingStore.API\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
