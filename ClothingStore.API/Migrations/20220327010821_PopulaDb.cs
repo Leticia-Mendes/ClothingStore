@@ -13,7 +13,7 @@ namespace ClothingStore.API.Migrations
             migrationBuilder.Sql("Insert into Categories (Name) Values('Lingerie')");
 
             migrationBuilder.Sql("Insert into Products(Name, Price, Size, Color, Description, Stock, RegisterDate, CategoryId) " +
-               "Values('React-Cropped', '50.00', 'P', 'Red', 'Woman reacts, put on a cropped!', 50, now(), " +
+               "Values('Cropped to React', '50.00', 'P', 'Red', 'Woman reacts, put on a cropped!', 50, now(), " +
                "(Select CategoryId from Categories where Name='Shirts'))");
 
             migrationBuilder.Sql("Insert into Products(Name, Price, Size, Color, Description, Stock, RegisterDate, CategoryId) " +

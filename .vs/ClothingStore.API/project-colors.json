@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "cc5c3438-2909-44f9-afea-bdf490615066": {
+      "ProjectGuid": "cc5c3438-2909-44f9-afea-bdf490615066",
+      "DisplayName": "ClothingStore.API",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
