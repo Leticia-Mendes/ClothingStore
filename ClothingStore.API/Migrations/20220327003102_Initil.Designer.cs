@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClothingStore.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220326220537_Initial")]
-    partial class Initial
+    [Migration("20220327003102_Initil")]
+    partial class Initil
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

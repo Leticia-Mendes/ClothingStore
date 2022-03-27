@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClothingStore.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220326221028_PopulaDb")]
+    [Migration("20220327003253_PopulaDb")]
     partial class PopulaDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

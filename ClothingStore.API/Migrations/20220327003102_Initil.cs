@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ClothingStore.API.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Initil : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

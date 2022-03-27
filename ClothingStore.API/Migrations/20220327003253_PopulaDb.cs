@@ -17,12 +17,16 @@ namespace ClothingStore.API.Migrations
                "(Select CategoryId from Categories where Name='Shirts'))");
 
             migrationBuilder.Sql("Insert into Products(Name, Price, Size, Color, Description, Stock, RegisterDate, CategoryId) " +
+               "Values('Jeans Pants', '130.00', '40', 'Medium Blue Wash', ' These Classic Skinny Jeans in medium blue are the perfect pair for everyday wear.', 30, now(), " +
+               "(Select CategoryId from Categories where Name='Pants'))");
+
+            migrationBuilder.Sql("Insert into Products(Name, Price, Size, Color, Description, Stock, RegisterDate, CategoryId) " +
                "Values('Mini-Dress', '100.00', 'M', 'Black', 'Beautiful black mini dress', 20, now(), " +
                "(Select CategoryId from Categories where Name='Dresses'))");
 
             migrationBuilder.Sql("Insert into Products(Name, Price, Size, Color, Description, Stock, RegisterDate, CategoryId) " +
-               "Values('Jeans Pants', '130.00', '42', 'Medium Blue Wash', ' These Classic Skinny Jeans in medium blue are the perfect pair for everyday wear.', 30, now(), " +
-               "(Select CategoryId from Categories where Name='Pants'))");
+               "Values('Mini-Dress', '100.00', 'G', 'Black', 'Beautiful black mini dress', 25, now(), " +
+               "(Select CategoryId from Categories where Name='Dresses'))");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
