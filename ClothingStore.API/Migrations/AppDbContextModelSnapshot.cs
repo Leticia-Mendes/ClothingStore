@@ -71,8 +71,8 @@ namespace ClothingStore.API.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
 
-                    b.Property<string>("Stock")
-                        .HasColumnType("longtext");
+                    b.Property<int>("Stock")
+                        .HasColumnType("int");
 
                     b.Property<string>("UrlImage")
                         .HasMaxLength(400)

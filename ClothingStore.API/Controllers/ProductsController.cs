@@ -2,10 +2,10 @@
 using ClothingStore.API.Domain;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using ClothingStore.API.Context;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 
 namespace ClothingStore.API.Controllers
 {
@@ -19,56 +19,99 @@ namespace ClothingStore.API.Controllers
             _context = context;
         }
 
+        // GET: api/Products
         [HttpGet]
-        public ActionResult<IEnumerable<Product>> GetAll()
+        public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
-            return _context.Products.AsNoTracking().ToList();
+            try
+            {
+                return await _context.Products.AsNoTracking().ToListAsync();
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error trying to get products from database.");
+            }
         }
 
+        // GET: api/Products/5
         [HttpGet("{id}", Name = "GetProduct")]
-        public ActionResult<Product> Get(int id)
+        public async Task<ActionResult<Product>> Get(int id)
         {
-            var product = _context.Products.AsNoTracking().FirstOrDefault(p => p.ProductId == id);
-            if (product == null)
+            try
             {
-                return NotFound();
+                var product = await _context.Products.AsNoTracking().FirstOrDefaultAsync(p => p.ProductId == id);
+                if (product == null)
+                {
+                    return NotFound($"The product id={id} was not found");
+                }
+                return product;
             }
-            return product;
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error trying to get product from database.");
+            }
+
         }
 
+        // POST: api/Products
         [HttpPost] 
-        public ActionResult Post([FromBody]Product product)
+        public ActionResult PostProduct([FromBody]Product product)
         {
-            _context.Products.Add(product);
-            _context.SaveChanges(); 
-            return new CreatedAtRouteResult("GetProduct", new { id = product.ProductId }, product);
+            try
+            {
+                _context.Products.Add(product);
+                _context.SaveChanges(); 
+                return new CreatedAtRouteResult("GetProduct", new { id = product.ProductId }, product);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error when trying to create a new product.");
+            }
         }
 
+        // PUT: api/Products/5
         [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody]Product product)
+        public ActionResult PutProduct(int id, [FromBody]Product product)
         {
-            if (id != product.ProductId)
+            try
             {
-                return BadRequest();
+                if (id != product.ProductId)
+                {
+                    return BadRequest();
+                }
+
+                _context.Entry(product).State = EntityState.Modified;
+                _context.SaveChanges();
+                return Ok($"The product id={id} has been updated successfully ");
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error when trying to change product.");
             }
 
-            _context.Entry(product).State = EntityState.Modified;
-            _context.SaveChanges();
-            return Ok();
         }
 
+        // DELETE: api/Categories/5
         [HttpDelete("{id}")]
-        public ActionResult<Product> Delete(int id)
+        public async Task<IActionResult> DeleteProduct(int id)
         {
-            var product = _context.Products.FirstOrDefault(p => p.ProductId == id);
-            if (product == null)
+            try
             {
-                return NotFound();
-            }
+                var product = await _context.Products.FindAsync(id);
+                if (product == null)
+                {
+                    return NotFound();
+                }
 
-            _context.Products.Remove(product);
-            _context.SaveChanges();
-            return product;
+                _context.Products.Remove(product);
+                await _context.SaveChangesAsync();
+
+                return NoContent();
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Error deleting product id={id}.");
+            }
         }
 
     }

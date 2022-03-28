@@ -45,8 +45,7 @@ namespace ClothingStore.API.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     UrlImage = table.Column<string>(type: "varchar(400)", maxLength: 400, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Stock = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Stock = table.Column<int>(type: "int", nullable: false),
                     RegisterDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false)
                 },

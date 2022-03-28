@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClothingStore.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220327010821_PopulaDb")]
-    partial class PopulaDb
+    [Migration("20220328130526_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -73,8 +73,8 @@ namespace ClothingStore.API.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
 
-                    b.Property<string>("Stock")
-                        .HasColumnType("longtext");
+                    b.Property<int>("Stock")
+                        .HasColumnType("int");
 
                     b.Property<string>("UrlImage")
                         .HasMaxLength(400)

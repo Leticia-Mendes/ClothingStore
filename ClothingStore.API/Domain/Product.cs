@@ -33,7 +33,7 @@ namespace ClothingStore.API.Domain
 
         [StringLength(400)]
         public string UrlImage { get; set; }
-        public string Stock { get; set; }
+        public int Stock { get; set; }
         public DateTime RegisterDate  { get; set; }
         
         public Category Category { get; set; }
