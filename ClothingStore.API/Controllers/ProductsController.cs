@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ClothingStore.API.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace ClothingStore.API.Controllers
 {
@@ -27,9 +28,9 @@ namespace ClothingStore.API.Controllers
             {
                 return await _context.Products.AsNoTracking().ToListAsync();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error trying to get products from database.");
+                return BadRequest(e.Message);
             }
         }
 
@@ -46,9 +47,9 @@ namespace ClothingStore.API.Controllers
                 }
                 return product;
             }
-            catch (Exception)
+            catch (Exception e )
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error trying to get product from database.");
+                return BadRequest(e.Message); ;
             }
 
         }
@@ -63,9 +64,9 @@ namespace ClothingStore.API.Controllers
                 _context.SaveChanges(); 
                 return new CreatedAtRouteResult("GetProduct", new { id = product.ProductId }, product);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error when trying to create a new product.");
+                return BadRequest(e.Message); ;
             }
         }
 
@@ -84,9 +85,9 @@ namespace ClothingStore.API.Controllers
                 _context.SaveChanges();
                 return Ok($"The product id={id} has been updated successfully ");
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error when trying to change product.");
+                return BadRequest(e.Message);
             }
 
         }
@@ -108,9 +109,9 @@ namespace ClothingStore.API.Controllers
 
                 return NoContent();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, $"Error deleting product id={id}.");
+                return BadRequest(e.Message);
             }
         }
 

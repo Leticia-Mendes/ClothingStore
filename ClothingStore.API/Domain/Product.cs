@@ -13,30 +13,33 @@ namespace ClothingStore.API.Domain
         [Key]
         public int ProductId { get; set; }
         
-        [Required]
-        [StringLength(80)]
+        [Required(ErrorMessage = "Name is required")]
+        [StringLength(60, ErrorMessage = "Name must be between 3 and 60 characters", MinimumLength = 3)]
         public string Name { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Price is required")]
         public double Price { get; set; }
 
-        [Required]
-        [MaxLength(50)]
+        [Required(ErrorMessage = "Size is required")]
+        [MaxLength(20)]
         public string Size { get; set; }
 
-        [Required]
-        [MaxLength(50)]
+        [Required(ErrorMessage = "Color is required")]
+        [MaxLength(30)]
         public string Color { get; set; }
 
-        [StringLength(300)]
+        [StringLength(600, ErrorMessage = "Description must be a maximum of 600 characters")]
         public string Description { get; set; }
 
-        [StringLength(400)]
+        [StringLength(200)]
         public string UrlImage { get; set; }
+        
         public int Stock { get; set; }
+       
         public DateTime RegisterDate  { get; set; }
         
         public Category Category { get; set; }
+       
         public int CategoryId { get; set; }
 
     }

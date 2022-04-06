@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9TMP2AgAno1GMAUl/RcwIRvKhf7ZC1/veiHUjg7ayhH7yXZKip9pSavVAOmjogL/bwRv6//wmkCGcZSnWK/FCA==",
+  "dgSpecHash": "gHnB+6mTZyGrmLO8ZziBP7MQDdrNUtk6CNtt98wjGkiij1W8enBuy24P/C76b93Km3/owAK0xgoGDgHB32d8uQ==",
   "success": true,
-  "projectFilePath": "D:\\codigo-c#\\ClothingStore.API\\ClothingStore.API\\ClothingStore.API.csproj",
+  "projectFilePath": "D:\\C# codigo\\ClothingStore.API\\ClothingStore.API\\ClothingStore.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\leticia.mendes\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\leticia.mendes\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

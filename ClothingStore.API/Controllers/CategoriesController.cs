@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ClothingStore.API.Context;
 using ClothingStore.API.Domain;
+using Microsoft.Extensions.Configuration;
+using ClothingStore.API.Services;
 
 namespace ClothingStore.API.Controllers
 {
@@ -14,10 +16,12 @@ namespace ClothingStore.API.Controllers
     public class CategoriesController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly IConfiguration _configuration;
 
-        public CategoriesController(AppDbContext context)
+        public CategoriesController(AppDbContext context, IConfiguration configuration)
         {
             _context = context;
+            _configuration = configuration;
         }
 
         // GET: api/Categories
@@ -28,9 +32,23 @@ namespace ClothingStore.API.Controllers
             {
                 return await _context.Categories.AsNoTracking().ToListAsync();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error trying to get categories from database ");
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpGet("welcome/{name}")]
+        public ActionResult<string> Hello([FromServices] IMyService myservice, string name)
+        {
+            try
+            {
+                return myservice.Welcome(name);
+            }
+            
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
             }
         }
 
@@ -49,9 +67,9 @@ namespace ClothingStore.API.Controllers
 
                 return category;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error trying to get category from database ");
+                return BadRequest(e.Message);
             }
 
         }
@@ -66,9 +84,9 @@ namespace ClothingStore.API.Controllers
                 _context.SaveChanges();
                 return new CreatedAtRouteResult("GetCategory", new { id = category.CategoryId }, category);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error when trying to create a new category.");
+                return BadRequest(e.Message);
             }
         }
 
@@ -87,9 +105,9 @@ namespace ClothingStore.API.Controllers
                 _context.SaveChanges();
                 return Ok($"The category id={id} has been updated successfully ");
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error when trying to change category.");
+                return BadRequest(e.Message);
             }
 
         }
@@ -111,9 +129,9 @@ namespace ClothingStore.API.Controllers
 
                 return NoContent();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, $"Error deleting category id={id}. ");
+                return BadRequest(e.Message);
             }
         }
     }

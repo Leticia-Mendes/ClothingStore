@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\codigo-c#\\ClothingStore.API\\ClothingStore.API\\ClothingStore.API.csproj": {}
+    "D:\\C# codigo\\ClothingStore.API\\ClothingStore.API\\ClothingStore.API.csproj": {}
   },
   "projects": {
-    "D:\\codigo-c#\\ClothingStore.API\\ClothingStore.API\\ClothingStore.API.csproj": {
+    "D:\\C# codigo\\ClothingStore.API\\ClothingStore.API\\ClothingStore.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\codigo-c#\\ClothingStore.API\\ClothingStore.API\\ClothingStore.API.csproj",
+        "projectUniqueName": "D:\\C# codigo\\ClothingStore.API\\ClothingStore.API\\ClothingStore.API.csproj",
         "projectName": "ClothingStore.API",
-        "projectPath": "D:\\codigo-c#\\ClothingStore.API\\ClothingStore.API\\ClothingStore.API.csproj",
+        "projectPath": "D:\\C# codigo\\ClothingStore.API\\ClothingStore.API\\ClothingStore.API.csproj",
         "packagesPath": "C:\\Users\\leticia.mendes\\.nuget\\packages\\",
-        "outputPath": "D:\\codigo-c#\\ClothingStore.API\\ClothingStore.API\\obj\\",
+        "outputPath": "D:\\C# codigo\\ClothingStore.API\\ClothingStore.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

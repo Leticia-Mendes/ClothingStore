@@ -1,4 +1,5 @@
 using ClothingStore.API.Context;
+using ClothingStore.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +33,8 @@ namespace ClothingStore.API
 
             services.AddDbContext<AppDbContext>(options => 
             options.UseMySql(mySqlConnection,ServerVersion.AutoDetect(mySqlConnection)));
+
+            services.AddTransient<IMyService, MyService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

@@ -18,9 +18,9 @@ namespace ClothingStore.API.Domain
 
         [Key]
         public int CategoryId { get; set; }
-        
-        [Required]
-        [MaxLength(80)]
+
+        [Required(ErrorMessage = "Name is required")]
+        [StringLength(60, ErrorMessage = "Name must be between 3 and 60 characters", MinimumLength = 3)]
         public string Name { get; set; }
         
         [MaxLength(300)]
